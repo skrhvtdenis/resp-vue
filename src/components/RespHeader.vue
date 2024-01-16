@@ -1,40 +1,31 @@
 <template>
-  <div class="wrapper">
-    <header class="main-header">
-      <div class="header-item img-number">
-        <img src="/imgs/respakLogo.svg" alt="respak logo" class="header-logo" />
-        <p class="header__text">+7 800 775 19 86</p>
-      </div>
+  <header class="main-header">
+    <div class="header-item img-number">
+      <img src="/imgs/respakLogo.svg" alt="respak logo" class="header-logo" />
+      <p class="header__text">+7 800 775 19 86</p>
+    </div>
 
-      <div class="header-item nav-button">
-        <nav class="main-header__navigation">
-          <ul class="navigation">
-            <li class="navigation-item">
-              <a href="#products" class="header__text">Продукты</a>
-            </li>
-            <li class="navigation-item">
-              <a href="#about" class="header__text">О компании</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="main-header__button">
-          <img src="/imgs/header-button.png" alt="header button" />
-        </button>
-      </div>
-    </header>
-  </div>
+    <div class="header-item nav-button">
+      <nav class="main-header__navigation">
+        <ul class="navigation">
+          <li class="navigation-item">
+            <a href="#products" class="header__text">Продукты</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#about" class="header__text">О компании</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="main-header__button">
+        <img src="/imgs/header-button.png" alt="header button" />
+      </button>
+    </div>
+  </header>
 </template>
 
 <script setup></script>
 
 <style lang="scss" scoped>
-.wrapper {
-  padding: 0 34px;
-  margin: 0 auto;
-  height: 100vh;
-  background-color: #ffffff;
-}
-
 header {
   display: flex;
   flex-direction: row;
