@@ -1,7 +1,8 @@
 <template>
-  <div class="stories-wrapper">
-    <div class="svg-hover">
+  <div class="stories-wrapper" @mouseup="dragStop">
+    <div class="svg-hover" @click="changeCard(-itemWidth)">
       <svg
+        @click="reduceCur"
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -14,14 +15,25 @@
         />
       </svg>
     </div>
-    <div class="stories__container">
-      <StoriesItem class="item" />
-      <StoriesItem class="item" />
-      <StoriesItem class="item" />
-      <StoriesItem class="item" />
+    <div
+      @mousemove="dragging"
+      @mousedown="dragStart"
+      ref="carousel"
+      class="stories__container"
+      :class="{ dragging: isDragging }"
+    >
+      <StoriesItem
+        ref="item"
+        class="item active"
+        v-for="(storie, i) in stories"
+        v-bind:style="{ transform: 'translateX(0%)' }"
+        :key="storie.id"
+        :storie="storie"
+      />
     </div>
-    <div class="svg-hover">
+    <div class="svg-hover" @click="changeCard(itemWidth)">
       <svg
+        @click="addCur"
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -38,10 +50,89 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
 import StoriesItem from "./StoriesItem.vue";
+
+const stories = ref([
+  {
+    id: 1,
+    date: "0",
+    text: "ФГИС Зерно, мы запускаем новый модуль! Смотрите подробности",
+    img: "/imgs/stories-picture-1.svg",
+  },
+  {
+    id: 2,
+    date: "1",
+    text: "ФГИС Зерно, мы запускаем новый модуль! Смотрите подробности",
+    img: "/imgs/stories-picture-1.svg",
+  },
+  {
+    id: 3,
+    date: "2",
+    text: "ФГИС Зерно, мы запускаем новый модуль! Смотрите подробности",
+    img: "/imgs/stories-picture-1.svg",
+  },
+  {
+    id: 4,
+    date: "3",
+    text: "ФГИС Зерно, мы запускаем новый модуль! Смотрите подробности",
+    img: "/imgs/stories-picture-1.svg",
+  },
+  {
+    id: 5,
+    date: "4",
+    text: "ФГИС Зерно, мы запускаем новый модуль! Смотрите подробности",
+    img: "/imgs/stories-picture-1.svg",
+  },
+  {
+    id: 6,
+    date: "5",
+    text: "ФГИС Зерно, мы запускаем новый модуль! Смотрите подробности",
+    img: "/imgs/stories-picture-1.svg",
+  },
+]);
+const carousel = ref(null);
+const itemWidth = ref(500);
+const startX = ref();
+const startScrollLeft = ref();
+
+const isDragging = ref(false);
+
+const dragStart = (e) => {
+  isDragging.value = true;
+
+  // Records the initial cursor and scroll position of the carousel
+  startX.value = e.pageX;
+  startScrollLeft.value = carousel.value.scrollLeft;
+};
+const dragStop = () => {
+  isDragging.value = false;
+};
+
+const dragging = (e) => {
+  if (!isDragging.value) return; // if isDragging is false return from here
+  // Updates the scroll positio of the carousel based on the cursor movement
+  carousel.value.scrollLeft = startScrollLeft.value - (e.pageX - startX.value);
+};
+
+const changeCard = function (direction) {
+  console.log(direction);
+  carousel.value.scrollLeft += direction;
+};
+
+onMounted(() => {
+  console.log(carousel.value);
+  console.log(itemWidth.value);
+});
+
+/* watch(isDragging, () => {}); */
 </script>
 
 <style lang="scss" scoped>
+.active {
+  display: block;
+}
+
 .svg-hover {
   svg path {
     fill: #e7e7e7;
@@ -56,23 +147,25 @@ import StoriesItem from "./StoriesItem.vue";
 }
 
 .stories-wrapper {
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-}
-.item {
-  margin-right: 100px;
+  /*  max-width: 1680px; */
 }
 
+.item {
+}
 .item:last-child {
   margin-right: 0;
 }
 
 .stories__container {
-  margin: 0 auto;
-  max-width: 1680px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 4));
+  justify-items: center;
+  gap: 15px;
+  overflow: hidden;
 }
 </style>

@@ -1,23 +1,32 @@
 <template>
   <div class="stories-item">
-    <p class="stories__date stories__text">29.10.2023</p>
+    <p class="stories__date stories__text">{{ storie.date }}</p>
     <div class="stories__picture">
-      <img src="/imgs/stories-picture-1.svg" alt="" class="stories--img" />
+      <img draggable="false" :src="storie.img" alt="" class="stories--img" />
     </div>
     <p class="stories__date stories__text">
-      ФГИС Зерно - мы <br />запускаем новый модуль!<br />
-      Смотрите подробности
+      {{ storie.text }}
     </p>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  storie: Object,
+});
+</script>
 
 <style lang="scss" scoped>
+.stories-item {
+  max-width: 336px;
+}
+
 .stories__picture {
   margin: 20px 0;
 }
 .stories--img {
+  width: 336px;
+  height: 201px;
   background: radial-gradient(
         circle at 100% 100%,
         #ffffff 0,
