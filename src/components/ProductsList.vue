@@ -107,6 +107,8 @@
   font-weight: 500;
 }
 
+//test
+
 .product-name {
   color: #1d1f22;
   font-size: 8.125rem;
