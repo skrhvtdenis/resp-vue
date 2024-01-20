@@ -23,7 +23,7 @@
       :class="{ dragging: isDragging }"
     >
       <StoriesItem
-        ref="item"
+        ref="storiesRefs"
         class="item active"
         v-for="(storie, i) in stories"
         v-bind:style="{ transform: 'translateX(0%)' }"
@@ -92,7 +92,11 @@ const stories = ref([
   },
 ]);
 const carousel = ref(null);
+
+const storiesRefs = ref([]);
+
 const itemWidth = ref(500);
+
 const startX = ref();
 const startScrollLeft = ref();
 
@@ -123,6 +127,7 @@ const changeCard = function (direction) {
 onMounted(() => {
   console.log(carousel.value);
   console.log(itemWidth.value);
+  console.log(storiesRefs);
 });
 
 /* watch(isDragging, () => {}); */
@@ -151,10 +156,12 @@ onMounted(() => {
   width: 100%;
   display: flex;
   align-items: center;
-  /*  max-width: 1680px; */
+  /*  width: 1826px; */
+  /* justify-content: center; */
 }
 
 .item {
+  /* scroll-snap-align: start; */
 }
 .item:last-child {
   margin-right: 0;
@@ -165,7 +172,30 @@ onMounted(() => {
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 4));
   justify-items: center;
-  gap: 15px;
-  overflow: hidden;
+  /*  max-width: 1680px; */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.stories__container::-webkit-scrollbar {
+  display: none;
+}
+
+.stories__container.dragging {
+  /* scroll-snap-type: none; */
+  scroll-behavior: auto;
+}
+
+@media (max-width: 1500px) {
+  .stories__container {
+    grid-auto-columns: calc(100% / 3);
+  }
+}
+@media (max-width: 1200px) {
+  .stories__container {
+    grid-auto-columns: calc(100% / 2);
+  }
 }
 </style>
