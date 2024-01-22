@@ -57,13 +57,13 @@ header {
   flex-direction: row;
 }
 
-.navigation-item {
+/* .navigation-item {
   margin-right: 100px;
   a {
     @include underline;
     position: relative;
   }
-}
+} */
 
 .nav-button {
   justify-content: space-between;
@@ -74,5 +74,9 @@ header {
 }
 .main-header__button:hover {
   cursor: pointer;
+}
+
+.navigation-item {
+  margin-right: 100px;
 }
 </style>
