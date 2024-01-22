@@ -8,6 +8,8 @@
       <StoriesList />
 
       <ProductsList />
+
+      <NewsList />
     </div>
   </div>
 </template>
@@ -17,6 +19,7 @@ import RespHeader from "./components/RespHeader.vue";
 import FirstPage from "./components/FirstPage.vue";
 import StoriesList from "./components/StoriesList.vue";
 import ProductsList from "./components/ProductsList.vue";
+import NewsList from "./components/NewsList.vue";
 </script>
 
 <style lang="scss">

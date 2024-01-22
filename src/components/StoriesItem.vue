@@ -2,12 +2,7 @@
   <div class="stories-item">
     <p class="stories__date stories__text">{{ storie.date }}</p>
     <div class="stories__picture">
-      <img
-        draggable="false"
-        src="/imgs/stories-picture-1.svg"
-        alt=""
-        class="stories--img"
-      />
+      <img draggable="false" :src="storie.img" alt="" class="stories--img" />
     </div>
     <p class="stories__date stories__text">
       {{ storie.text }}
