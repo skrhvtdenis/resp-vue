@@ -18,7 +18,9 @@
           />
         </button>
       </div>
-      <div class="news-container">
+      <div class="news-list__grid">
+        <NewsItem />
+        <NewsItem />
         <NewsItem />
       </div>
     </div>
@@ -44,6 +46,7 @@ import NewsItem from "./NewsItem.vue";
 .news__container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #fff;
   border-radius: 160px;
   padding: 150px;
@@ -93,5 +96,12 @@ import NewsItem from "./NewsItem.vue";
 }
 .circle:hover {
   opacity: 1;
+}
+
+.news-list__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 14px;
 }
 </style>
