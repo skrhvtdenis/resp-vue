@@ -38,7 +38,7 @@
         </svg>
       </div>
 
-      <p>9012</p>
+      <p class="view-text">{{}}</p>
     </div>
     <div class="card-info">
       <svg
@@ -74,24 +74,29 @@
     </div>
     <div class="info">
       <p>13 августа 2023</p>
-      <p>#аналитика</p>
+      <a href="#">#аналитика</a>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted, ref } from "vue";
+
+defineProps({});
+
+/* onMounted(() => {
+  console.log(newItem);
+}); */
+</script>
 
 <style lang="scss" scoped>
 .img-wrapper {
-  width: fit-content;
-  height: fit-content;
-  position: relative;
-  z-index: 0;
 }
 
 .news-item {
+  filter: grayscale(100%);
   position: relative;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   /* svg {
     position: absolute;
@@ -99,10 +104,12 @@
   p {
     position: absolute;
   } */
+
+  transition: all 0.5s;
 }
 
 .card-views {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -115,11 +122,18 @@
   top: 0;
   right: 0;
 
+  p {
+    color: white;
+    font-weight: 500;
+  }
+
   svg {
     /* position: absolute;
     left: 12px;
     bottom: 4px; */
   }
+
+  transition: all 2s;
 }
 
 .card-info {
@@ -132,9 +146,10 @@
   p {
     font-size: 12px;
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
     max-width: 206px;
     max-height: 60px;
+    font-weight: 700;
   }
 }
 
@@ -145,10 +160,11 @@
   position: absolute;
   bottom: 0;
   height: 52px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   a {
+    font-size: 1.25rem;
     text-decoration: none;
     color: black;
     font-weight: 500;
@@ -165,6 +181,56 @@
   }
 }
 
+.info {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  a {
+    margin-left: 22px;
+    color: $text-light-green;
+    text-decoration: none;
+  }
+}
+
 .item-img {
+  width: 100%;
+}
+
+.news-item:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+  .link-wrapper {
+    display: flex;
+  }
+  .card-views {
+    display: flex;
+  }
+  .card-info {
+    p {
+      text-decoration: underline;
+    }
+  }
+}
+
+.news-item:first-of-type {
+  filter: grayscale(0%);
+
+  .link-wrapper {
+    display: flex;
+  }
+  .card-views {
+    display: flex;
+  }
+  .card-info {
+    p {
+      text-decoration: underline;
+    }
+  }
 }
 </style>
