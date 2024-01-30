@@ -90,8 +90,8 @@ defineProps({});
 </script>
 
 <style lang="scss" scoped>
-.img-wrapper {
-}
+/* .img-wrapper {
+} */
 
 .news-item {
   filter: grayscale(100%);
@@ -125,12 +125,6 @@ defineProps({});
   p {
     color: white;
     font-weight: 500;
-  }
-
-  svg {
-    /* position: absolute;
-    left: 12px;
-    bottom: 4px; */
   }
 
   transition: all 2s;

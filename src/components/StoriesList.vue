@@ -160,9 +160,6 @@ onMounted(() => {
   /* justify-content: center; */
 }
 
-.item {
-  /* scroll-snap-align: start; */
-}
 .item:last-child {
   margin-right: 0;
 }
