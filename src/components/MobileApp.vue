@@ -5,7 +5,7 @@
         <div class="page-head">
           <p class="app-name">Mobile App</p>
 
-          <h1>Lorem, ipsum dolor.</h1>
+          <!--  <h1>Lorem, ipsum dolor.</h1> -->
           <h1>Господдержка АПК НСО</h1>
 
           <p>Мобильное приложение для ИС.РЕСПАК для региона Новосибирск</p>
@@ -34,7 +34,26 @@
       </div>
 
       <div class="right-col">
-        <img class="hand-phone" src="/imgs/phoneBg-no-hand.png" alt="" />
+        <img class="phone" src="/imgs/phoneBg-no-hand.png" alt="" />
+        <div class="links-stats-wrapper">
+          <div class="links">
+            <a href="#"
+              ><img src="/imgs/apple-logo.png" alt="apple-logo" href="#"
+            /></a>
+            <a href="#">
+              <img
+                src="/imgs/playmarket-logo.png"
+                alt="playmarket-logo"
+                href="#"
+              />
+            </a>
+            <a href="#"><img src="/imgs/rustore.png" alt="ruStore-logo" /></a>
+          </div>
+          <div class="subsidy-wrapper">
+            <img class="subsidy-stats" src="/imgs/subsidy-stats.svg" alt="" />
+          </div>
+        </div>
+        <img class="smev" src="/imgs/smev.png" alt="" />
       </div>
     </div>
   </div>
@@ -48,16 +67,72 @@
 }
 .container {
   display: grid;
+  gap: 75px;
   justify-items: center;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  grid-template-columns: min-content auto;
   /*  padding-left: 210px; */
-
-  border: 1px solid red;
 
   position: relative;
 }
 
-.hand-phone {
+.left-col {
+  min-width: 610px;
+  margin-left: 180px;
+}
+
+.right-col {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  position: relative;
+
+  .phone {
+    z-index: 10;
+  }
+  .smev {
+    position: absolute;
+    z-index: 0;
+    bottom: -10%;
+    left: -10%;
+  }
+}
+
+.links-stats-wrapper {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .links {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      padding: 18px;
+
+      border-radius: 23px;
+      background: #fff;
+      box-shadow: 6px 6px 24px 0px rgba(0, 0, 0, 0.1);
+
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+
+  .subsidy-wrapper {
+    margin-top: 22px;
+    width: fit-content;
+
+    img {
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 6px 6px 54px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 .page-head {
@@ -105,6 +180,11 @@
     font-weight: 500;
     margin-top: 110px;
 
+    transition: 0.5s;
+    &:hover {
+      transform: translateY(-10px);
+    }
+
     img {
       position: absolute;
       top: -150%;
@@ -112,7 +192,7 @@
     }
 
     &:last-of-type {
-      margin-bottom: 85px;
+      margin-bottom: 2rem;
     }
   }
 }
