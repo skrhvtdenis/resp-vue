@@ -63,14 +63,17 @@
 
 <style lang="scss" scoped>
 .bg {
+  padding: 2rem 0;
   background: white url(/imgs/background-lines.svg);
 }
 .container {
-  display: grid;
-  gap: 75px;
+  display: flex;
+  flex-direction: row;
+
   justify-items: center;
   align-items: center;
-  grid-template-columns: min-content auto;
+  flex-wrap: wrap;
+
   /*  padding-left: 210px; */
 
   position: relative;
@@ -78,16 +81,17 @@
 
 .left-col {
   min-width: 610px;
-  margin-left: 180px;
+  margin-left: 10%;
 }
 
 .right-col {
   display: flex;
-  width: 100%;
+  /* padding-left: 3rem; */
   justify-content: flex-start;
   position: relative;
 
   .phone {
+    width: 100%;
     z-index: 10;
   }
   .smev {
@@ -96,6 +100,8 @@
     bottom: -10%;
     left: -10%;
   }
+
+  /*  @media () */
 }
 
 .links-stats-wrapper {
