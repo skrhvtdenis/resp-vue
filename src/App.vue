@@ -12,7 +12,9 @@
 
     <NewsList class="mb" />
 
-    <MobileApp />
+    <MobileApp class="mb" />
+
+    <MapInfo />
   </div>
 </template>
 
@@ -23,6 +25,7 @@ import StoriesList from "./components/StoriesList.vue";
 import ProductsList from "./components/ProductsList.vue";
 import NewsList from "./components/NewsList.vue";
 import MobileApp from "./components/MobileApp.vue";
+import MapInfo from "./components/MapInfo.vue";
 </script>
 
 <style lang="scss">
