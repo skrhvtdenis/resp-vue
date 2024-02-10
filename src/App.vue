@@ -6,11 +6,13 @@
       <FirstPage />
 
       <StoriesList />
-
-      <ProductsList />
-
-      <NewsList />
     </div>
+
+    <ProductsList />
+
+    <NewsList class="mb" />
+
+    <MobileApp />
   </div>
 </template>
 
@@ -20,6 +22,7 @@ import FirstPage from "./components/FirstPage.vue";
 import StoriesList from "./components/StoriesList.vue";
 import ProductsList from "./components/ProductsList.vue";
 import NewsList from "./components/NewsList.vue";
+import MobileApp from "./components/MobileApp.vue";
 </script>
 
 <style lang="scss">
@@ -27,5 +30,11 @@ import NewsList from "./components/NewsList.vue";
   padding: 0 34px;
   margin: 0 auto;
   height: 100vh;
+  /* TODO: FIX MARGIN-BOTTOM LATER */
+  margin-bottom: 300px;
+}
+
+.mb {
+  margin-bottom: 150px;
 }
 </style>

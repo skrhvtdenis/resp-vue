@@ -18,15 +18,15 @@ defineProps({
 
 <style lang="scss" scoped>
 .stories-item {
-  max-width: 336px;
+  max-width: 100%;
 }
 
 .stories__picture {
   margin: 20px 0;
 }
 .stories--img {
-  width: 336px;
-  height: 201px;
+  width: 100%;
+  height: 100%;
   background: radial-gradient(
         circle at 100% 100%,
         #ffffff 0,

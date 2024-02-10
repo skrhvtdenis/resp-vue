@@ -160,9 +160,6 @@ onMounted(() => {
   /* justify-content: center; */
 }
 
-.item {
-  /* scroll-snap-align: start; */
-}
 .item:last-child {
   margin-right: 0;
 }
@@ -170,7 +167,8 @@ onMounted(() => {
 .stories__container {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 4));
+  grid-auto-columns: calc((100% / 3));
+  gap: 2rem;
   justify-items: center;
   /*  max-width: 1680px; */
   overflow-x: auto;
@@ -196,6 +194,14 @@ onMounted(() => {
 @media (max-width: 1200px) {
   .stories__container {
     grid-auto-columns: calc(100% / 2);
+  }
+}
+@media (width: 600px) {
+  .stories__container {
+    grid-auto-columns: calc(100% / 5);
+  }
+  .item {
+    width: 10rem;
   }
 }
 </style>
