@@ -1245,14 +1245,18 @@
       </div>
       <div class="info">
         <h2>{{ activeRegion.fullName }}</h2>
-        <br />
+        <hr />
         <p>
           {{ activeRegion.info }}
         </p>
         <ul>
           <li v-for="list in activeRegion.infoList">{{ list }}</li>
         </ul>
-        <a href="#">На сайт -></a>
+        <p class="navigation-item">
+          <a href="#"
+            >&ensp;&ensp;на сайт <img src="/imgs/arrow.png" alt=""
+          /></a>
+        </p>
       </div>
     </div>
   </div>
@@ -1408,7 +1412,7 @@ const changeActiveRegion = function (e) {
 }
 
 .info {
-  margin-top: 10%;
+  margin-top: 15%;
   padding-left: 2%;
   width: 40%;
 
@@ -1416,16 +1420,35 @@ const changeActiveRegion = function (e) {
     font-size: 1.5rem;
     color: $text-light-green;
   }
-  br {
-    border: 1px solid black;
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top: 1px solid black;
+    width: 40%;
   }
 
   p {
-    font-size: 500;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    max-width: 540px;
   }
 
   ul {
+    margin-left: 2.5%;
     color: black;
+    list-style-image: url("/imgs/rounded-marker.svg");
+    margin-bottom: 2rem;
+
+    li {
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      font-weight: 400;
+    }
+
+    li:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 
