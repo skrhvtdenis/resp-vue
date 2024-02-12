@@ -1,8 +1,12 @@
 <template>
   <div class="page-wrapper">
-    <a href="/map2.html">mapa2</a>
-    <h1>Топография клиентов</h1>
-    <p>Местоположение</p>
+    <div class="header">
+      <h1>Топография клиентов</h1>
+      <div>
+        <hr />
+        <p>Местоположение</p>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="rf-map">
         <div class="popover">
@@ -1598,7 +1602,7 @@ const regions = ref([
     ],
   },
   {
-    code: "RU-BA",
+    code: "RU-AL",
     fullName: "Республика Алтай",
     shortName: "Респ Алтай",
     year: "с 2022 года",
@@ -1702,6 +1706,31 @@ const changeActiveRegion = function (e) {
 .page-wrapper {
   background-color: #ffff;
   border-radius: 10rem;
+  width: 100%;
+  padding-top: 6rem;
+  .header {
+    margin-left: 4rem;
+
+    h1 {
+      font-weight: 500;
+    }
+
+    hr {
+      border-top: 1.5px solid #000;
+      align-self: center;
+      display: block;
+      width: 3%;
+      margin-right: 0.75rem;
+    }
+    div {
+      margin-top: 2rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
 }
 
 .rf-map,
@@ -1921,6 +1950,8 @@ const changeActiveRegion = function (e) {
   border-radius: 10px;
   max-width: fit-content;
   font-weight: 500;
+  position: absolute;
+  top: 100px;
   h3 {
     color: $text-light-green;
     margin-bottom: 0.5rem;
@@ -1970,7 +2001,7 @@ $regions: (
   "RU-IRK",
   "RU-BU",
   "RU-TY",
-  "RU-BA",
+  "RU-AL",
   "RU-BA",
   "RU-KO",
   "RU-IN",
@@ -2035,5 +2066,6 @@ $regions: (
 
 .active {
   fill: #35cf72 !important;
+  position: relative;
 }
 </style>
