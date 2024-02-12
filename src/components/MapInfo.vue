@@ -5,14 +5,6 @@
     <p>Местоположение</p>
     <div class="wrapper">
       <div class="rf-map">
-        <!-- <div class="district"><b></b><span></span></div>
-        <div class="close-district">&times;</div>
-        <div id="RU-SAR" class="district-text">
-          Текст в открывающимся окне для Саратовской области
-        </div>
-        <div id="RU-SA" class="district-text">
-          Текст в открывающимся окне для Якутии
-        </div> -->
         <div class="popover">
           <div class="popover-line"></div>
           <div class="popover-content">
@@ -114,6 +106,7 @@
           />
           <path
             data-title="Республика Ингушетия"
+            :class="{ active: activeRegion.code === 'RU-IN' }"
             data-code="RU-IN"
             d="M58.7,411.5l-1.2,2.6l-1.5,2.4l-1.9,1.4l-0.6-2.3l-2.2-0.3l1.2-2
                 h1.9l0.2-1.3l-0.6-2l0.6-3l1.7-0.7l0.9,1.7l2,1.6L58.7,411.5"
@@ -128,6 +121,7 @@
           />
           <path
             data-title="Республика Калмыкия"
+            :class="{ active: activeRegion.code === 'RU-KL' }"
             data-code="RU-KL"
             d="M78.7,406.2l2.7-0.8h2.4l2.2-2.5l1.8-0.8v-1.8l-1.4-1l-1.7,0
                 l-0.4-1l4.1-2.9v-1.2l-0.8-0.8v-1.5l-0.9-1.2l1-1l1.4,0.6l0.2,1h0.9l0.2-1.6l2.7,0.2l0.8-2l-1.3-1.3l0.9-3.2l1.5-0.8l0.3-1.5
@@ -212,6 +206,7 @@
           />
           <path
             data-title="Республика Тыва"
+            :class="{ active: activeRegion.code === 'RU-TY' }"
             data-code="RU-TY"
             d="M457.9,424.1l-2,2l-1.6,3.2l-1.7,1.7l-0.5,3.3l1.6,1.9v2.8
                 l2.2,2.2v3l-3,2l-2.9,2.9h-2.4h-3.7l-3.4-0.9l-3.5,0.6l-2.5-0.8l-3.7-1.3l-2-2l-2.4-2.4l-2.9-0.9l-3.4,1.4l-2.2-2.2l-2.7-1.2
@@ -339,7 +334,11 @@
                     l-1.1-1.5l-0.7-2.7l-1-2.1L206.3,204.1"
             />
           </g>
-          <g data-title="Сахалинская область" data-code="RU-SAK">
+          <g
+            data-title="Сахалинская область"
+            data-code="RU-SAK"
+            :class="{ active: activeRegion.code === 'RU-SAK' }"
+          >
             <path
               d="M705.1,284.6l-0.9,0.2l-0.7-1.9v-1.6l2.8,0.8l1.4,0.7l0.8,1.8
                     l1.5,1.5l2.7,0.5l0.7,1.8l3.1,2h1.6l1.3,1.9l1.1,3l1.7,1.7l3.2,3.3l2.1,0.5l2.9,1.1l2.7,2.4l3.7,2.1l2.4,2.1l3.2,1.6l2.7,1.6
@@ -423,12 +422,18 @@
           </g>
           <path
             data-title="Калининградская область"
+            :class="{
+              active: activeRegion.code === 'RU-KGD',
+            }"
             data-code="RU-KGD"
             d="M21.6,195.1l2,0.4l1.7-0.5l0.6-1.2l1.5,0.2l1.4,1.4l0.1,2l1.2,0.4
                 l0.2,1.5l1.8,0.3l0.4-1.4l-1-1l0.8-0.8l0.5,0.5l1.7,1.4v2.2l-0.2,1.9l1,1.6l1,0.7l0.4,2.5l-0.9,1.9l-4.2,2.1l-6.4-7.6L21.6,195.1"
           />
           <path
             data-title="Калужская область"
+            :class="{
+              active: activeRegion.code === 'RU-KLU',
+            }"
             data-code="RU-KLU"
             d="M73,268.4l-1.2-1.9l1.7-0.4l1.8-1.8H77l1.3,1.3l0.4,1.5l1.8,0.2
                 l0.6-0.6l1,0.3l1.7,1.3l1.6-1h1.8l2.3-0.5l1.8,0.5l1,1.8l1.2,1.2h2.1l0.8,1.5l0.8,1.4l-0.9,1.3l-0.7,1.3v1.9l-1.9,1.3l-1.8-1.2
@@ -471,7 +476,13 @@
             d="M104.7,269.9l0-0.2l-0.4-0.8l0-0.8l-1.1,0.3l-0.8,0.7l0.3,0.7
                 l-0.8,1.2l-0.9-0.1v1.3v1.1l-0.5,1.4l1.3-0.1l0.9-0.9l0.5,0.5l0.5,0.5h1.7l-0.3-1.3l0.8-1.1l1-0.9l-0.9-0.9L104.7,269.9"
           />
-          <g data-title="Ненецкий автономный округ" data-code="RU-NEN">
+          <g
+            data-title="Ненецкий автономный округ"
+            data-code="RU-NEN"
+            :class="{
+              active: activeRegion.code === 'RU-NEN',
+            }"
+          >
             <path
               d="M299.3,218.6l-1,1.5l-1.2,1.2l-0.8,0.8l1.2,1.2l0.3,1l1,0.3v2v2.3
                     h-1.2l-1.5-0.8h-1.5l-2.5,2.2l-2.2,0.1l-1,2.4l-3.4-0.6l-0.9,1.5l-1.5,1.5l-1.5,0.8l-2.8,1l-2.4,0.6l-2.9-1.5l-1.5,0.3l-1.7-1.5
@@ -722,6 +733,7 @@
           />
           <path
             data-title="Республика Башкортостан"
+            :class="{ active: activeRegion.code === 'RU-BA' }"
             data-code="RU-BA"
             d="M215.4,340.4l-1.6,1.6l-1.5-2.2h-1.8l-2.9-2.1l-1.6-2.3l-1.4,0.6
                 l-1.6-0.6l-1-3.4l-2.1-0.4l-1.1-2.3h-2.6l-2.6-2.1v-1.5l-1.6-0.6l-1.3,1.3l-4.9,1.4l-0.8,0.8l1.1,1.6v1.7l-2.6,2h-1.9l-1.5,0.7
@@ -733,6 +745,9 @@
           />
           <path
             data-title="Ярославская область"
+            :class="{
+              active: activeRegion.code === 'RU-YAR',
+            }"
             data-code="RU-YAR"
             d="M121.8,250.8l2.5-1.1l1.6-0.3l2.3-0.2l1.3,1.3l3.2,2.2l1.2-1.2
                 l2.4,2.4v5l3,3v2.2l-3.3,0.1l-0.8,1.8h-1.7l-2.4,2.6h-1.6l-0.7,1.8l-2.6-0.6l-1.2-1.2h-2.9l-1.8,1.8h-2.1l-1.1,1.1l-1.5-1.5
@@ -812,6 +827,7 @@
           />
           <path
             data-title="Республика Коми"
+            :class="{ active: activeRegion.code === 'RU-KO' }"
             data-code="RU-KO"
             d="M296.1,228h-1.5l-2.5,2.2l-2.2,0.1l-1,2.4l-3.4-0.6l-0.9,1.5
                 l-1.5,1.5l-1.5,0.8l-2.9,1l-2.4,0.6l-2.9-1.5l-1.5,0.3l-1.7-1.5l-3.4-1.3l-3.4-2.2l-2.5-1l-4.1-1.6l-2-2l-2.5-0.3l-4-2.6l-2-2
@@ -843,6 +859,7 @@
           />
           <path
             data-title="Республика Бурятия"
+            :class="{ active: activeRegion.code === 'RU-BU' }"
             data-code="RU-BU"
             d="M518.7,433.8l-4.4-0.6l-1.8-1.1l-5.8,0.8H503l-3,3l-3.3,0.8
                 l-3.2,0.9l-4.6-0.4l-3.1-1.3l-2-2l-1.8-3.9l-2.3-2.3l-3.3-1.3h-3.2l-3.6,0.9l-2.5-2.5h-4.9l-2.9-2.2l-1.5,1.5l-0.2-2.4l-1.2-1.2
@@ -873,6 +890,7 @@
           />
           <path
             data-title="Иркутская область"
+            :class="{ active: activeRegion.code === 'RU-IRK' }"
             data-code="RU-IRK"
             d="M558,320.9l-1-2.8l-1.6-0.2V316l-1.7-1.9l-1.4-1.4h-2v1.9
                 l-1.8,1.8l-2.8-0.4v-1.8l-1.2-1V311l-2.5-0.3l-2.8-1.3l-2.7,0.3l-2.7-0.4l-1.5,1.8l-0.8,2.5l-1.8,1.8l0.7,2.5l-0.9,2.8l-2.4,2.4v4.4
@@ -892,6 +910,9 @@
           />
           <path
             data-title="Тюменская область"
+            :class="{
+              active: activeRegion.code === 'RU-TYU',
+            }"
             data-code="RU-TYU"
             d="M275.8,375.2l-1.1-2.3h-3.2l-2.5-1.5l-2.8-0.3l-0.4-3.8l-5-3.1
                 l0.4-2.4l-1.7-0.3l-0.8-1.7h-2.2l-1.5-1.4l-2-0.4v-2.9l-1.5-0.5l-2.2-3.1l1.5-2.6l1.6-1.2l-0.7-2.3l1-1l-0.5-2.8l2.2-2.2l1.9,0.5
@@ -1020,6 +1041,9 @@
           </g>
           <path
             data-title="Томская область"
+            :class="{
+              active: activeRegion.code === 'RU-TOM',
+            }"
             data-code="RU-TOM"
             d="M367.4,329.8l1.4,3l1,2.2l-2.3,2.3l0.8,2.5l2.8,0.9l3.4-0.9h4.1
                 l3,0.8l1.5,2.3l2.4,2.4l0.8,2.9l3.7-0.3l1.3,1.3l-2.2,2.4l-2,2l-1.2,3.2l1.9,3l0.6,2h2.2l3.4,1.1l0.4,2.9l-2.8,1.4l-1.6,2.9v3.8
@@ -1240,6 +1264,13 @@
             fill="#"
             transform="translate(410, 360) scale(0.75)"
           />
+          <!-- NSO -->
+          <path
+            class="dot"
+            d="M12.4231 10.6761L12.3911 10.7243C12.3518 10.785 12.3105 10.8445 12.2692 10.9092L7.5995 17.8315C7.53237 17.9311 7.4429 18.0124 7.33872 18.0686C7.23454 18.1248 7.11873 18.1541 7.00119 18.1541C6.88364 18.1541 6.76784 18.1248 6.66365 18.0686C6.55947 18.0124 6.47 17.9311 6.40287 17.8315L1.74433 10.9145C1.69953 10.8484 1.65666 10.787 1.61347 10.7296L1.58467 10.685C0.955226 9.67991 0.60001 8.51829 0.556416 7.32243C0.512821 6.12656 0.78246 4.94069 1.33695 3.88964C1.89144 2.83859 2.71027 1.96124 3.70724 1.34994C4.70422 0.738645 5.84246 0.416016 7.00215 0.416016C8.16184 0.416016 9.30008 0.738645 10.297 1.34994C11.294 1.96124 12.1129 2.83859 12.6673 3.88964C13.2218 4.94069 13.4915 6.12656 13.4479 7.32243C13.4043 8.51829 13.0491 9.67991 12.4196 10.685L12.4231 10.6761ZM7.00119 4.30284C6.37939 4.30289 5.77685 4.52541 5.29623 4.9325C4.8156 5.33959 4.48663 5.90605 4.36537 6.53537C4.2441 7.16469 4.33805 7.81794 4.63119 8.38379C4.92434 8.94965 5.39855 9.39312 5.97303 9.63862C6.5475 9.88413 7.1867 9.9165 7.78171 9.7302C8.37672 9.54391 8.89072 9.15048 9.23614 8.61695C9.58156 8.08343 9.73703 7.44282 9.67605 6.80427C9.61507 6.16572 9.34142 5.56874 8.90172 5.11506C8.65213 4.85753 8.35583 4.65325 8.02974 4.51389C7.70364 4.37453 7.35414 4.30282 7.00119 4.30284Z"
+            fill="#"
+            transform="translate(330, 375) scale(0.75)"
+          />
         </svg>
         <div class="district-links"></div>
       </div>
@@ -1263,13 +1294,13 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 
 const regions = ref([
   {
-    code: "RU-OMS",
-    fullName: "Омская область",
-    shortName: "Омск",
+    code: "RU-ALT",
+    fullName: "Алтайский край",
+    shortName: "Алтай",
     year: "с 2017 года",
     link: "agro.yanao.ru",
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
@@ -1281,6 +1312,23 @@ const regions = ref([
       "И последний пятый",
     ],
   },
+
+  {
+    code: "RU-KYA",
+    fullName: "Красноярский край",
+    shortName: "КК",
+    year: "с 2017 года",
+    link: "agro.yanao.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2017 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+
   {
     code: "RU-PER",
     fullName: "Пермский край",
@@ -1296,12 +1344,13 @@ const regions = ref([
       "И последний пятый",
     ],
   },
+
   {
-    code: "RU-KYA",
-    fullName: "Красноярский край",
-    shortName: "КК",
+    code: "RU-ZAB",
+    fullName: "Забайкальский край",
+    shortName: "Забайкал",
     year: "с 2017 года",
-    link: "agro.yanao.ru",
+    link: "respak.permkrai.ru",
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
     infoList: [
       "Сотрудничество с 2017 года",
@@ -1327,6 +1376,7 @@ const regions = ref([
       "И последний пятый",
     ],
   },
+
   {
     code: "RU-KHM",
     fullName: "Ханты-Мансийский Автономный округ",
@@ -1342,13 +1392,256 @@ const regions = ref([
       "И последний пятый",
     ],
   },
+
   {
-    code: "RU-KHM",
-    fullName: "Ханты-Мансийский Автономный округ",
-    shortName: "ХМАО",
+    code: "RU-NVS",
+    fullName: "Новосибирская область",
+    shortName: "НСО",
     year: "с 2017 года",
     link: "apk.admhmao.ru",
-    info: "Some other info",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+
+  {
+    code: "RU-OMS",
+    fullName: "Омская область",
+    shortName: "Омск",
+    year: "с 2017 года",
+    link: "agro.yanao.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2017 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+
+  {
+    code: "RU-KLU",
+    fullName: "Калужская область",
+    shortName: "Калуга",
+    year: "с 2022 года",
+    link: "apk.admoblkaluga.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-TYU",
+    fullName: "Тюменская область",
+    shortName: "Тюмень",
+    year: "с 2022 года",
+    link: "apk.admoblkaluga.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorpersem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-TOM",
+    fullName: "Томская область",
+    shortName: "Томск",
+    year: "с 2022 года",
+    link: "apk.admoblkaluga.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-NEN",
+    fullName: "Ненецкий автономный округ",
+    shortName: "НАО",
+    year: "с 2022 года",
+    link: "apk.admoblkaluga.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-KGD",
+    fullName: "Калининградская область",
+    shortName: "Калина",
+    year: "с 2022 года",
+    link: "apk.admoblkaluga.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-YAR",
+    fullName: "Ярославская область",
+    shortName: "Ярославль",
+    year: "с 2022 года",
+    link: "apk.yarcloud.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-SAK",
+    fullName: "Сахалинская область",
+    shortName: "Сахалин",
+    year: "с 2022 года",
+    link: "apk.yarcloud.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-IRK",
+    fullName: "Иркутская область",
+    shortName: "Иркутск",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-BU",
+    fullName: "Республика Бурятия",
+    shortName: "Бурятия",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-TY",
+    fullName: "Республика Тыва",
+    shortName: "Тыва",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-BA",
+    fullName: "Республика Башкортостан",
+    shortName: "Башкирия",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-BA",
+    fullName: "Республика Алтай",
+    shortName: "Респ Алтай",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-KO",
+    fullName: "Республика Коми",
+    shortName: "Коми",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-KL",
+    fullName: "Республика Калмыкия",
+    shortName: "Калмыкия",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
+    infoList: [
+      "Сотрудничество с 2018 года",
+      "Более 8 успешных проектов по модернизации системы",
+      "Что-то еще крутое и умное, надо написать",
+      "Еще шаблон",
+      "И последний пятый",
+    ],
+  },
+  {
+    code: "RU-IN",
+    fullName: "Республика Ингушетия",
+    shortName: "Ингушетия",
+    year: "с 2022 года",
+    link: "apk38.ru",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper sem urna, sit amet lacinia tortor pharetra in. Cras id odio ipsum. Aliquam ac purus quis libero fringilla luctus nec ut ligula.",
     infoList: [
       "Сотрудничество с 2018 года",
       "Более 8 успешных проектов по модернизации системы",
@@ -1379,8 +1672,8 @@ const activeRegion = reactive({
 
 const changeActiveRegion = function (e) {
   const clickedRegion = e.target.closest("g")
-    ? e.target.closest("g").dataset.code
-    : e.target.closest("path").dataset.code;
+    ? e.target.closest("g")?.dataset.code
+    : e.target.closest("path")?.dataset.code;
   console.log(clickedRegion);
 
   const regionInfo = regions.value.find(
@@ -1391,6 +1684,11 @@ const changeActiveRegion = function (e) {
 
   console.log(activeRegion);
 };
+
+/* get all regions code */
+/* onMounted(() => {
+  console.log(regions.value.map((region) => region.code));
+}); */
 </script>
 
 <style lang="scss" scoped>
@@ -1638,7 +1936,49 @@ const changeActiveRegion = function (e) {
 .test::after {
   content: url("/dot.svg");
 } */
-.rf-map [data-code="RU-YAN"]:hover {
+
+@mixin hoverRegion {
+  &:hover {
+    fill: #35cf72;
+    cursor: pointer;
+  }
+}
+
+$regions: (
+  "RU-ALT",
+  "RU-KYA",
+  "RU-PER",
+  "RU-ZAB",
+  "RU-YAN",
+  "RU-KHM",
+  "RU-NVS",
+  "RU-OMS",
+  "RU-KLU",
+  "RU-TYU",
+  "RU-TOM",
+  "RU-NEN",
+  "RU-KGD",
+  "RU-YAR",
+  "RU-SAK",
+  "RU-IRK",
+  "RU-BU",
+  "RU-TY",
+  "RU-BA",
+  "RU-BA",
+  "RU-KO",
+  "RU-IN",
+  "RU-KL"
+);
+
+.rf-map {
+  @each $region in $regions {
+    & [data-code="#{$region}"] {
+      @include hoverRegion();
+    }
+  }
+}
+
+/* .rf-map [data-code="RU-YAN"]:hover {
   fill: #35cf72;
   cursor: pointer;
 }
@@ -1684,7 +2024,7 @@ const changeActiveRegion = function (e) {
 .rf-map [data-code="RU-OMS"]:hover {
   fill: #35cf72;
   cursor: pointer;
-}
+} */
 
 .active {
   fill: #35cf72 !important;
