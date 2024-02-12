@@ -10,9 +10,13 @@
           <div class="popover-content">
             <h3>{{ activeRegion.shortName }}</h3>
             <p>{{ activeRegion.year }}</p>
-            <a :href="`https://${activeRegion.link}`" class="prod-link">{{
-              activeRegion.link
-            }}</a>
+            <a
+              :href="`https://${activeRegion.link}`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="prod-link"
+              >{{ activeRegion.link }}</a
+            >
           </div>
         </div>
         <svg
@@ -1284,7 +1288,10 @@
           <li v-for="list in activeRegion.infoList">{{ list }}</li>
         </ul>
         <p class="navigation-item">
-          <a href="#"
+          <a
+            :href="`https://${activeRegion.link}`"
+            target="_blank"
+            rel="noopener noreferrer"
             >&ensp;&ensp;на сайт <img src="/imgs/arrow.png" alt=""
           /></a>
         </p>
@@ -1705,7 +1712,7 @@ const changeActiveRegion = function (e) {
 .wrapper {
   display: flex;
   align-items: start;
-  height: 100vh;
+
   max-width: 1800px;
 }
 
