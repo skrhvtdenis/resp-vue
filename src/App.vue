@@ -8,13 +8,15 @@
       <StoriesList />
     </div>
 
-    <ProductsList />
+    <!-- <ProductsList /> -->
 
     <NewsList class="mb" />
 
     <MobileApp class="mb" />
 
     <MapInfo />
+
+    <div class="wrapper"><PageEnd /></div>
   </div>
 </template>
 
@@ -26,6 +28,7 @@ import ProductsList from "./components/ProductsList.vue";
 import NewsList from "./components/NewsList.vue";
 import MobileApp from "./components/MobileApp.vue";
 import MapInfo from "./components/MapInfo.vue";
+import PageEnd from "./components/PageEnd.vue";
 </script>
 
 <style lang="scss">
