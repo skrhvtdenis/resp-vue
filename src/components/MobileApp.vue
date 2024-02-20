@@ -105,6 +105,7 @@
 }
 
 .links-stats-wrapper {
+  z-index: 5;
   margin-left: 2rem;
   display: flex;
   flex-direction: column;
@@ -207,11 +208,14 @@
   .links-stats-wrapper {
     margin-left: 0.25rem;
   }
-}
-
-@media screen and (min-width: 65rem) {
-  .right-col {
-    width: 30%;
+  @media screen and (max-width: 97.5rem) and (min-width: 65rem) {
+    .right-col {
+      flex-direction: column;
+      width: 32%;
+    }
+    .links-stats-wrapper {
+      flex-direction: column-reverse;
+    }
   }
 }
 
