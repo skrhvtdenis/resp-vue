@@ -211,11 +211,16 @@
   @media screen and (max-width: 97.5rem) and (min-width: 65rem) {
     .right-col {
       flex-direction: column;
-      width: 32%;
     }
     .links-stats-wrapper {
       flex-direction: column-reverse;
     }
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .right-col {
+    width: 30%;
   }
 }
 
