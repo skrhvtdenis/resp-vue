@@ -16,7 +16,7 @@
 
     <MapInfo />
 
-    <div class="wrapper"><PageEnd /></div>
+    <!-- <div class="wrapper"><PageEnd /></div> -->
   </div>
 </template>
 

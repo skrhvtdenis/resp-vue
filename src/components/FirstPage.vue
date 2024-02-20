@@ -19,7 +19,7 @@
         </nav>
       </div>
       <div class="content__item item-pic">
-        <img src="/imgs/girl-picture.png" alt="girl" class="content-img" />
+        <!--  <img src="/imgs/girl-picture.png" alt="girl" class="content-img" /> -->
       </div>
     </div>
   </section>

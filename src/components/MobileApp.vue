@@ -202,4 +202,22 @@
     }
   }
 }
+
+@media screen and (max-width: 100rem) {
+  .links-stats-wrapper {
+    margin-left: 0.25rem;
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .right-col {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .right-col {
+    margin-top: 2rem;
+  }
+}
 </style>

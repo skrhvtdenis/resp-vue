@@ -41,7 +41,7 @@ header {
 .header-item {
   display: flex;
   align-items: center;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .header__text {
@@ -70,6 +70,7 @@ header {
 }
 
 .main-header__button {
+  width: fit-content;
   all: unset;
 }
 .main-header__button:hover {
