@@ -31,6 +31,7 @@
 .first-page__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
 }
 
 .item-info {
