@@ -35,12 +35,17 @@ import PageEnd from "./components/PageEnd.vue";
 .wrapper {
   padding: 0 34px;
   margin: 0 auto;
-  height: 100vh;
   /* TODO: FIX MARGIN-BOTTOM LATER */
   margin-bottom: 300px;
 }
 
 .mb {
   margin-bottom: 150px;
+}
+
+@media screen and (max-width: 520px) {
+  .wrapper {
+    padding: 0 16px;
+  }
 }
 </style>

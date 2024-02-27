@@ -254,5 +254,17 @@
   .links-stats-wrapper {
     flex-direction: column-reverse;
   }
+  .smev {
+    width: 100%;
+  }
+
+  .page-head {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
 }
 </style>

@@ -92,6 +92,28 @@
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 420px) {
+  .info-name {
+    font-size: 4.5rem;
+  }
+  .info-description {
+    font-size: 1.25rem;
+  }
+  .info-small-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .info-name {
+    font-size: 4rem;
+  }
+  .info-description {
+    font-size: 1.25rem;
+  }
+  .info-small-text {
+    font-size: 1rem;
+  }
+}
 
 // GRADIENT
 .linear-wipe {

@@ -2144,4 +2144,10 @@ $regions: (
 .dot {
   fill: black !important;
 }
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
 </style>

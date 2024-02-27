@@ -168,7 +168,7 @@ onMounted(() => {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3));
-  gap: 2rem;
+  gap: 1.5rem;
   justify-items: center;
   /*  max-width: 1680px; */
   overflow-x: auto;
@@ -193,7 +193,7 @@ onMounted(() => {
 }
 @media (max-width: 1200px) {
   .stories__container {
-    grid-auto-columns: calc(100% / 2);
+    grid-auto-columns: calc(100% / 4);
   }
 }
 </style>
