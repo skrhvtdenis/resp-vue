@@ -78,6 +78,17 @@ header {
 }
 
 .navigation-item {
-  margin-right: 100px;
+  margin-right: 2em;
+}
+
+@media screen and (max-width: 870px) {
+  .header__text {
+    font-size: 1.25rem !important;
+  }
+}
+@media screen and (max-width: 752px) {
+  .header__text {
+    display: none;
+  }
 }
 </style>

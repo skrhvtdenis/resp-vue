@@ -1,6 +1,6 @@
 <template>
   <div class="stories-wrapper" @mouseup="dragStop">
-    <div class="svg-hover" @click="changeCard(-itemWidth)">
+    <!-- <div class="svg-hover" @click="changeCard(-itemWidth)">
       <svg
         @click="reduceCur"
         width="24"
@@ -14,7 +14,7 @@
           fill="#E7E7E7"
         />
       </svg>
-    </div>
+    </div> -->
     <div
       @mousemove="dragging"
       @mousedown="dragStart"
@@ -31,7 +31,7 @@
         :storie="storie"
       />
     </div>
-    <div class="svg-hover" @click="changeCard(itemWidth)">
+    <!-- <div class="svg-hover" @click="changeCard(itemWidth)">
       <svg
         @click="addCur"
         width="24"
@@ -45,7 +45,7 @@
           fill="#E7E7E7"
         />
       </svg>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -194,14 +194,6 @@ onMounted(() => {
 @media (max-width: 1200px) {
   .stories__container {
     grid-auto-columns: calc(100% / 2);
-  }
-}
-@media (width: 600px) {
-  .stories__container {
-    grid-auto-columns: calc(100% / 5);
-  }
-  .item {
-    width: 10rem;
   }
 }
 </style>

@@ -10,7 +10,7 @@
 
     <!-- <ProductsList /> -->
 
-    <NewsList class="mb" />
+    <!-- <NewsList class="mb" /> -->
 
     <MobileApp class="mb" />
 

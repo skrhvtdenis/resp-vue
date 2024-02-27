@@ -2,7 +2,7 @@
   <section class="first_page">
     <div class="first-page__content">
       <div class="content__item item-info">
-        <h1 class="info-name">РЕСПАК</h1>
+        <h1 class="info-name linear-wipe">РЕСПАК</h1>
         <h3 class="info-description">
           Платформа цифровых<br />
           сервисов в АПК
@@ -19,7 +19,7 @@
         </nav>
       </div>
       <div class="content__item item-pic">
-        <!--  <img src="/imgs/girl-picture.png" alt="girl" class="content-img" /> -->
+        <!-- <img src="/imgs/girl-picture.png" alt="girl" class="content-img" /> -->
       </div>
     </div>
   </section>
@@ -31,7 +31,7 @@
 .first-page__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 90vh;
+  min-height: 88vh;
 }
 
 .item-info {
@@ -71,5 +71,50 @@
 }
 .content-img {
   max-height: 795px;
+}
+
+@media screen and (max-width: 700px) {
+  .info-name {
+    font-size: 6rem;
+  }
+  .info-description {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 526px) {
+  .info-name {
+    font-size: 5rem;
+  }
+  .info-description {
+    font-size: 1.5rem;
+  }
+  .info-small-text {
+    font-size: 1rem;
+  }
+}
+
+// GRADIENT
+.linear-wipe {
+  background: linear-gradient(
+    to right,
+    #35cf72 20%,
+    #01925a 40%,
+    #01925a 60%,
+    #35cf72 80%
+  );
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 6s linear infinite;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 }
 </style>
