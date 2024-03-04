@@ -19,6 +19,10 @@ defineProps({
 <style lang="scss" scoped>
 .stories-item {
   max-width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .stories__picture {
@@ -55,5 +59,11 @@ defineProps({
   color: #1d1f22;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 800px) {
+  .stories__text {
+    font-size: 0.5rem;
+  }
 }
 </style>

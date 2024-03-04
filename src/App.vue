@@ -36,7 +36,7 @@ import PageEnd from "./components/PageEnd.vue";
   padding: 0 34px;
   margin: 0 auto;
   /* TODO: FIX MARGIN-BOTTOM LATER */
-  margin-bottom: 300px;
+  margin-bottom: 30px;
 }
 
 .mb {

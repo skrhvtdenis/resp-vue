@@ -160,6 +160,10 @@ onMounted(() => {
   /* justify-content: center; */
 }
 
+.item {
+  max-width: 20rem;
+}
+
 .item:last-child {
   margin-right: 0;
 }
@@ -167,7 +171,7 @@ onMounted(() => {
 .stories__container {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3));
+  grid-auto-columns: calc((100% / 4));
   gap: 1.5rem;
   justify-items: center;
   /*  max-width: 1680px; */
@@ -175,6 +179,10 @@ onMounted(() => {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  padding-right: 4rem;
+  &:hover {
+    cursor: grab;
+  }
 }
 
 .stories__container::-webkit-scrollbar {
@@ -186,11 +194,12 @@ onMounted(() => {
   scroll-behavior: auto;
 }
 
-@media (max-width: 1500px) {
+/* @media (max-width: 1500px) {
   .stories__container {
     grid-auto-columns: calc(100% / 3);
   }
-}
+} */
+
 @media (max-width: 1200px) {
   .stories__container {
     grid-auto-columns: calc(100% / 4);
