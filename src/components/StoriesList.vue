@@ -174,7 +174,6 @@ onMounted(() => {
   grid-auto-columns: calc((100% / 4));
   gap: 1.5rem;
   justify-items: center;
-  /*  max-width: 1680px; */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -190,15 +189,8 @@ onMounted(() => {
 }
 
 .stories__container.dragging {
-  /* scroll-snap-type: none; */
   scroll-behavior: auto;
 }
-
-/* @media (max-width: 1500px) {
-  .stories__container {
-    grid-auto-columns: calc(100% / 3);
-  }
-} */
 
 @media (max-width: 1200px) {
   .stories__container {
