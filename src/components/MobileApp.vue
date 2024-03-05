@@ -60,7 +60,7 @@
     <section class="respak-page">
       <section class="container">
         <div class="vidgets-col">
-          <img src="/imgs/vidgets-page.png" alt="" />
+          <img src="/imgs/vidgets-page.png" draggable="false" alt="" />
         </div>
         <div class="info-col">
           <div class="page-head">
@@ -146,7 +146,7 @@
 <style lang="scss" scoped>
 .bg {
   padding: 2rem 0;
-  background: white url(/imgs/background-lines.svg);
+  background: white url(/imgs/background-lines.png);
   background-size: cover;
 }
 .container {
@@ -317,6 +317,7 @@
   }
 
   .grid-item {
+    background-color: #ffffff;
     max-width: 270px;
     border-radius: 20px;
     box-shadow: 0px 18.829999923706055px 47.08000183105469px 0px #2f327d1a;
@@ -331,13 +332,13 @@
       font-size: 1.25rem;
       font-weight: 700;
       margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     p {
       font-size: 14px;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
     a {
       align-self: flex-end;
