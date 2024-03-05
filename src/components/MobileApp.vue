@@ -240,7 +240,7 @@
   h1 {
     color: #1d1f22;
     font-family: Montserrat;
-    font-size: 48px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -308,12 +308,12 @@
   }
 
   .grid-container {
-    margin-top: 3rem;
+    margin-top: 3em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-
-    gap: 3rem;
+    font-size: 1rem;
+    gap: 3em 5em;
   }
 
   .grid-item {
@@ -322,11 +322,12 @@
     border-radius: 20px;
     box-shadow: 0px 18.829999923706055px 47.08000183105469px 0px #2f327d1a;
     display: flex;
-    padding: 1rem 1.5rem;
+    padding: 1em 1.5em;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: background-color 1s;
+    font-size: 1rem;
 
     h4 {
       font-size: 1.25rem;
@@ -427,6 +428,14 @@
     p {
       font-size: 1.25rem;
     }
+  }
+}
+
+/* RESPAK PAGE MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    font-size: 8px !important;
   }
 }
 </style>
