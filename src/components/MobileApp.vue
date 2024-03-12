@@ -57,8 +57,9 @@
       </div>
     </section>
 
+    <!-- second page layout -->
     <section class="respak-page">
-      <section class="container">
+      <div class="container">
         <div class="vidgets-col">
           <img src="/imgs/vidgets-page.png" draggable="false" alt="" />
         </div>
@@ -136,12 +137,18 @@
             </p>
           </div>
         </div>
-      </section>
+      </div>
+      <hr />
     </section>
+
+    <!-- third page layout -->
+    <ServicePage />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import ServicePage from "./ServicePage.vue";
+</script>
 
 <style lang="scss" scoped>
 .bg {
@@ -299,6 +306,7 @@
 /* SECOND PAGE STYLES */
 
 .respak-page {
+  margin-bottom: 3.5rem;
   .vidgets-col {
     align-self: flex-end;
   }
@@ -318,7 +326,7 @@
 
   .grid-item {
     background-color: #ffffff;
-    max-width: 270px;
+    max-width: 268px;
     border-radius: 20px;
     box-shadow: 0px 18.829999923706055px 47.08000183105469px 0px #2f327d1a;
     display: flex;
@@ -362,6 +370,14 @@
         opacity: 100%;
       }
     }
+  }
+
+  hr {
+    width: 60%;
+    margin: 0 auto;
+    height: 0;
+    border: 0;
+    border-top: 1px solid #237f5d67;
   }
 }
 
@@ -433,7 +449,13 @@
 
 /* RESPAK PAGE MEDIA QUERIES */
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
+  .grid-container {
+    font-size: 8px !important;
+  }
+} */
+
+@media screen and (max-width: 1600px) {
   .grid-container {
     font-size: 8px !important;
   }
