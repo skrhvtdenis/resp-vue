@@ -18,8 +18,7 @@
           </div>
           <div class="grid-item">
             <p>Интеграции с прочими системами</p>
-            <!--             <img src="/imgs/integration.svg" alt="" />
- -->
+            <img src="/imgs/integration.svg" alt="" />
           </div>
           <div class="grid-item">
             <p>Отчетность</p>
@@ -46,7 +45,7 @@
             <img src="/imgs/vidget-dashboard.svg" alt="" />
           </div>
           <div class="grid-item">
-            <p>Агрометеосервис</p>
+            <p>Агрометео сервис</p>
             <img src="/imgs/vidget-dashboard.svg" alt="" />
           </div>
           <div class="grid-item">
@@ -66,7 +65,7 @@
         </p>
       </div>
       <div class="img-col">
-        <img src="/imgs/thumbs-up.png" alt="" />
+        <!-- <img src="/imgs/thumbs-up.png" alt="" /> -->
       </div>
     </section>
   </div>
@@ -83,14 +82,8 @@
 .info-col {
   display: flex;
   flex-direction: column;
-  margin-left: 20%;
-
-  p {
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-  }
-
+  /*   margin-left: 20%;
+ */
   h2 {
     font-size: 3rem;
     font-style: bold;
@@ -98,12 +91,20 @@
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, minmax(120px, 150px));
+
+    gap: 3rem;
+
+    @media screen and (max-width: 600px) {
+      gap: 1.5rem;
+    }
+    @media screen and (max-width: 500px) {
+      gap: 1rem;
+    }
   }
 
   .grid-header {
+    background-color: #fff;
     grid-column-start: span 3;
     border-radius: 20px;
     box-shadow: 6px 6px 24px 0px rgba(0, 0, 0, 0.1);
@@ -111,12 +112,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 8rem;
+    padding: 2rem 4rem;
     p {
       margin-bottom: 1.25rem;
     }
   }
   .grid-item {
+    background-color: #fff;
     padding-top: 1rem;
 
     border-radius: 20px;
@@ -127,6 +129,13 @@
 
     p {
       padding-inline: 1rem;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    img {
+      width: 80px;
     }
   }
 }

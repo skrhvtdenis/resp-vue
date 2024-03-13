@@ -318,8 +318,7 @@ import ServicePage from "./ServicePage.vue";
   .grid-container {
     margin-top: 3em;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
     font-size: 1rem;
     gap: 3em 5em;
   }
