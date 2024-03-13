@@ -65,7 +65,7 @@
         </p>
       </div>
       <div class="img-col">
-        <!-- <img src="/imgs/thumbs-up.png" alt="" /> -->
+        <!--      <img src="/imgs/thumbs-up.png" alt="" /> -->
       </div>
     </section>
   </div>
@@ -82,11 +82,11 @@
 .info-col {
   display: flex;
   flex-direction: column;
-  /*   margin-left: 20%;
- */
+  align-items: center;
   h2 {
     font-size: 3rem;
     font-style: bold;
+    text-align: center;
   }
 
   .grid-container {
@@ -95,12 +95,14 @@
 
     gap: 3rem;
 
-    @media screen and (max-width: 600px) {
-      gap: 1.5rem;
+    /*  @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(2, minmax(120px, 150px));
+      gap: 2rem;
     }
     @media screen and (max-width: 500px) {
-      gap: 1rem;
-    }
+      grid-template-columns: repeat(2, minmax(120px, 150px));
+      gap: 1.5rem;
+    } */
   }
 
   .grid-header {
@@ -114,7 +116,11 @@
     align-items: center;
     padding: 2rem 4rem;
     p {
+      text-align: center;
       margin-bottom: 1.25rem;
+    }
+    img {
+      width: 100%;
     }
   }
   .grid-item {
@@ -137,6 +143,24 @@
     img {
       width: 80px;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .info-col .grid-container {
+    grid-template-columns: repeat(2, minmax(120px, 150px));
+    gap: 2rem;
+  }
+  .info-col .grid-header {
+    grid-column-start: span 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  .info-col .grid-container {
+    gap: 1.5rem;
+  }
+  .info-col .grid-header {
+    grid-column-start: span 2;
   }
 }
 </style>
